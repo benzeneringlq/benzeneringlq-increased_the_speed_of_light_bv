@@ -147,7 +147,7 @@ java {
 dependencies {
     annotationProcessor(androidx.room.compiler)
     ksp(androidx.room.compiler)
-    //implementation(platform("${libs.firebase.bom.get()}"))
+    implementation(platform("${libs.firebase.bom.get()}"))
     implementation(androidx.activity.compose)
     implementation(androidx.core.ktx)
     implementation(androidx.core.splashscreen)

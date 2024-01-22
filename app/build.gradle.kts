@@ -151,7 +151,8 @@ dependencies {
     implementation(androidx.activity.compose)
     implementation(androidx.core.ktx)
     implementation(androidx.core.splashscreen)
-    implementation(androidx.compose.constraintlayout)
+    //implementation(androidx.compose.constraintlayout)
+    implementation "androidx.constraintlayout:constraintlayout-compose:1.0.1"
     implementation(androidx.compose.ui)
     implementation(androidx.compose.ui.util)
     implementation(androidx.compose.ui.tooling.preview)

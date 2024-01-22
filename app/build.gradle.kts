@@ -8,7 +8,7 @@ import java.util.Properties
 plugins {
     alias(gradleLibs.plugins.android.application)
     //alias(gradleLibs.plugins.firebase.crashlytics)
-    //alias(gradleLibs.plugins.google.ksp)
+    alias(gradleLibs.plugins.google.ksp)
     //alias(gradleLibs.plugins.google.services)
     alias(gradleLibs.plugins.kotlin.android)
     alias(gradleLibs.plugins.kotlin.serialization)
@@ -62,9 +62,7 @@ android {
                 "proguard-rules.pro"
             )
             applicationIdSuffix = ".debug"
-            configure<CrashlyticsExtension> {
-                mappingFileUploadEnabled = false
-            }
+
         }
         create("r8Test") {
             isMinifyEnabled = true
@@ -73,10 +71,7 @@ android {
                 "proguard-rules.pro"
             )
             applicationIdSuffix = ".r8test"
-            if (signingProp.exists()) signingConfig = signingConfigs.getByName("key")
-            configure<CrashlyticsExtension> {
-                mappingFileUploadEnabled = false
-            }
+
         }
         create("alpha") {
             isMinifyEnabled = true

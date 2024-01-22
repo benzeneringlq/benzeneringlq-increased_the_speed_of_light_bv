@@ -62,7 +62,9 @@ android {
                 "proguard-rules.pro"
             )
             applicationIdSuffix = ".debug"
-
+            configure<CrashlyticsExtension> {
+                mappingFileUploadEnabled = false
+            }
         }
         create("r8Test") {
             isMinifyEnabled = true
@@ -71,7 +73,10 @@ android {
                 "proguard-rules.pro"
             )
             applicationIdSuffix = ".r8test"
-
+            if (signingProp.exists()) signingConfig = signingConfigs.getByName("key")
+            configure<CrashlyticsExtension> {
+                mappingFileUploadEnabled = false
+            }
         }
         create("alpha") {
             isMinifyEnabled = true
@@ -151,8 +156,7 @@ dependencies {
     implementation(androidx.activity.compose)
     implementation(androidx.core.ktx)
     implementation(androidx.core.splashscreen)
-    //implementation(androidx.compose.constraintlayout)
-    implementation "androidx.constraintlayout:constraintlayout-compose:1.0.1"
+    implementation(androidx.compose.constraintlayout)
     implementation(androidx.compose.ui)
     implementation(androidx.compose.ui.util)
     implementation(androidx.compose.ui.tooling.preview)

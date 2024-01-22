@@ -1,8 +1,8 @@
 @file:Suppress("UnstableApiUsage")
 
 import com.android.build.gradle.internal.api.ApkVariantOutputImpl
-//import com.google.firebase.crashlytics.buildtools.gradle.CrashlyticsExtension
-//import java.io.FileInputStream
+import com.google.firebase.crashlytics.buildtools.gradle.CrashlyticsExtension
+import java.io.FileInputStream
 import java.util.Properties
 
 plugins {
@@ -173,8 +173,8 @@ dependencies {
     implementation(libs.coil.compose)
     implementation(libs.coil.gif)
     implementation(libs.coil.svg)
-    //implementation(libs.firebase.analytics.ktx)
-    //implementation(libs.firebase.crashlytics.ktx)
+    implementation(libs.firebase.analytics.ktx)
+    implementation(libs.firebase.crashlytics.ktx)
     implementation(libs.geetest.sensebot)
     implementation(libs.koin.android)
     implementation(libs.koin.compose)

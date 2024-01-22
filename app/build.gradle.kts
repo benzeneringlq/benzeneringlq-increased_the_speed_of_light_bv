@@ -1,15 +1,15 @@
 @file:Suppress("UnstableApiUsage")
 
 import com.android.build.gradle.internal.api.ApkVariantOutputImpl
-import com.google.firebase.crashlytics.buildtools.gradle.CrashlyticsExtension
-import java.io.FileInputStream
+//import com.google.firebase.crashlytics.buildtools.gradle.CrashlyticsExtension
+//import java.io.FileInputStream
 import java.util.Properties
 
 plugins {
     alias(gradleLibs.plugins.android.application)
-    alias(gradleLibs.plugins.firebase.crashlytics)
-    alias(gradleLibs.plugins.google.ksp)
-    alias(gradleLibs.plugins.google.services)
+    //alias(gradleLibs.plugins.firebase.crashlytics)
+    //alias(gradleLibs.plugins.google.ksp)
+    //alias(gradleLibs.plugins.google.services)
     alias(gradleLibs.plugins.kotlin.android)
     alias(gradleLibs.plugins.kotlin.serialization)
 }
@@ -22,7 +22,7 @@ android {
             val properties = Properties().apply {
                 load(FileInputStream(signingProp))
             }
-            create("key") 
+            create("key")
 /*{
                 storeFile = rootProject.file(properties.getProperty("keystore.path"))
                 storePassword = properties.getProperty("keystore.pwd")
@@ -163,10 +163,11 @@ java {
 dependencies {
     annotationProcessor(androidx.room.compiler)
     ksp(androidx.room.compiler)
-    implementation(platform("${libs.firebase.bom.get()}"))
+    //implementation(platform("${libs.firebase.bom.get()}"))
     implementation(androidx.activity.compose)
     implementation(androidx.core.ktx)
     implementation(androidx.core.splashscreen)
+    implementation(androidx.compose.constraintlayout)
     implementation(androidx.compose.ui)
     implementation(androidx.compose.ui.util)
     implementation(androidx.compose.ui.tooling.preview)
@@ -188,8 +189,8 @@ dependencies {
     implementation(libs.coil.compose)
     implementation(libs.coil.gif)
     implementation(libs.coil.svg)
-    implementation(libs.firebase.analytics.ktx)
-    implementation(libs.firebase.crashlytics.ktx)
+    //implementation(libs.firebase.analytics.ktx)
+    //implementation(libs.firebase.crashlytics.ktx)
     implementation(libs.geetest.sensebot)
     implementation(libs.koin.android)
     implementation(libs.koin.compose)
